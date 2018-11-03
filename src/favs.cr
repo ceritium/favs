@@ -12,7 +12,8 @@ class Favs::CLI < Admiral::Command
 
     def run
       if arguments.command
-        Store.add(arguments.command.to_s)
+        result = Store.add(arguments.command.to_s)
+        STDOUT.puts "Added # 0 - #{result}"
       end
     end
   end
@@ -26,19 +27,35 @@ class Favs::CLI < Admiral::Command
   end
 
   class ShowFav < Admiral::Command
-    define_argument item : UInt32,
+    define_argument index : UInt32,
                   default: 1_u32,
                   required: true
     def run
-      if !arguments.item.nil?
-        STDOUT.puts Store.get(arguments.item)
+      index = arguments.index
+      unless index.nil?
+        STDOUT.puts Store.get(index)
       end
     end
   end
 
-  register_sub_command add, AddFav, short: "a"
+  class DeleteFav < Admiral::Command
+    define_argument index : UInt32,
+      default: 1_u32,
+      required: true
+
+    def run
+      index = arguments.index
+      unless index.nil?
+        result = Store.delete(index)
+        STDOUT.puts "Deleted: # #{index} - #{result}"
+      end
+    end
+  end
+
+  register_sub_command add, AddFav
   register_sub_command list, ListFavs, short: "ls"
   register_sub_command show, ShowFav
+  register_sub_command delete, DeleteFav, short: "del"
 
   def run
     puts help
