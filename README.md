@@ -1,22 +1,39 @@
 # favs
 
-TODO: Write a description here
+Store you favourite commands
 
 ## Installation
 
-TODO: Write installation instructions here
+```
+git clone git@github.com:ceritium/favs.git
+cd favs
+make install
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+favs --help
 
-## Development
+Usage:
+  ./favs [flags...] [arg...]
 
-TODO: Write development instructions here
+Store your fav commands
+
+Flags:
+  --help     # Displays help for the current command.
+  --version  # Displays the version of the current application.
+
+Subcommands:
+  add, a
+  list, ls
+  show
+```
+
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/favs/fork>)
+1. Fork it (<https://github.com/ceritium/favs/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -24,4 +41,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [your-github-user](https://github.com/your-github-user) Jose Galisteo - creator, maintainer
+- [ceritium](https://github.com/ceritium) Jose Galisteo - creator, maintainer
