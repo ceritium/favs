@@ -12,6 +12,11 @@ dependencies:
   admiral:
     github: jwaldrip/admiral.cr
 
+development_dependencies:
+  ameba:
+    github: veelenga/ameba
+    version: 0.8.1
+
 crystal: 0.26.1
 
 license: MIT
