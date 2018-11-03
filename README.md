@@ -16,7 +16,7 @@ make install
 favs --help
 
 Usage:
-  ./favs [flags...] [arg...]
+  favs [flags...] [arg...]
 
 Store your fav commands
 
